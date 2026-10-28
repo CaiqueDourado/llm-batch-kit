@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-batch-kit"
+version = "0.1.0"
+description = "Provider batch APIs at half price without mismatched answers: one list of (prompt, item) pairs, a signed manifest, idempotent collection and a Postgres queue that never pays twice for the same record."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Caique Dourado"}]
+requires-python = ">=3.10"
+dependencies = []
+keywords = ["llm", "batch", "gemini", "batch-api", "cost", "idempotent", "queue", "postgres"]
+
+[project.optional-dependencies]
+gemini = ["google-genai>=1.20"]
+postgres = ["psycopg[binary]>=3.1"]
+dev = ["pytest>=7", "psycopg[binary]>=3.1", "google-genai>=1.20",
+       "llm-cost-kit @ git+https://github.com/CaiqueDourado/llm-cost-kit"]
+
+[project.scripts]
+llm-batch-kit = "llm_batch_kit.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/CaiqueDourado/llm-batch-kit"
+
+[tool.setuptools.packages.find]
+where = ["src"]

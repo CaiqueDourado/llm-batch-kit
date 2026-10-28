@@ -1,0 +1,2 @@
+{"models": {"gemini-2.5-flash": {"input": 0.30, "output": 2.50, "cache_read": 0.03,
+  "source": "https://ai.google.dev/gemini-api/docs/pricing", "checked_at": "2026-10-06"}}}
